@@ -1,0 +1,13 @@
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\bin\Debug\net9.0\VehicleAPI.ServiceDefaults.deps.json
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\bin\Debug\net9.0\VehicleAPI.ServiceDefaults.dll
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\bin\Debug\net9.0\VehicleAPI.ServiceDefaults.pdb
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\VehicleAPI.ServiceDefaults.csproj.AssemblyReference.cache
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\VehicleAPI.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\VehicleAPI.ServiceDefaults.AssemblyInfoInputs.cache
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\VehicleAPI.ServiceDefaults.AssemblyInfo.cs
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\VehicleAPI.ServiceDefaults.csproj.CoreCompileInputs.cache
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\VehicleAPI.ServiceDefaults.sourcelink.json
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\VehicleAPI.ServiceDefaults.dll
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\refint\VehicleAPI.ServiceDefaults.dll
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\VehicleAPI.ServiceDefaults.pdb
+E:\boeingsep2025ws\VehicleAPI\VehicleAPI.ServiceDefaults\obj\Debug\net9.0\ref\VehicleAPI.ServiceDefaults.dll

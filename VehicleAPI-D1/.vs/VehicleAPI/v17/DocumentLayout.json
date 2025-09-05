@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\admin\\Documents\\dotNetRepo\\niitmssep2025-D1\\VehicleAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CE5A449B-DF15-2899-BDB9-7BD6872E9355}|VehicleAPI\\VehicleAPI.csproj|c:\\users\\admin\\documents\\dotnetrepo\\niitmssep2025-d1\\vehicleapi\\vehicleapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CE5A449B-DF15-2899-BDB9-7BD6872E9355}|VehicleAPI\\VehicleAPI.csproj|solutionrelative:vehicleapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\dotNetRepo\\niitmssep2025-D1\\VehicleAPI\\VehicleAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "VehicleAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\admin\\Documents\\dotNetRepo\\niitmssep2025-D1\\VehicleAPI\\VehicleAPI\\appsettings.json",
+              "RelativeToolTip": "VehicleAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-02T05:01:00.421Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
