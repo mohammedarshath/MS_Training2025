@@ -11,16 +11,3 @@ E:\boeingsep2025ws\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.
 E:\boeingsep2025ws\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\refint\CircuitBreaker.ServiceDefaults.dll
 E:\boeingsep2025ws\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.pdb
 E:\boeingsep2025ws\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\ref\CircuitBreaker.ServiceDefaults.dll
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\bin\Debug\net9.0\CircuitBreaker.ServiceDefaults.deps.json
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\bin\Debug\net9.0\CircuitBreaker.ServiceDefaults.dll
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\bin\Debug\net9.0\CircuitBreaker.ServiceDefaults.pdb
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.csproj.AssemblyReference.cache
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.AssemblyInfoInputs.cache
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.AssemblyInfo.cs
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.csproj.CoreCompileInputs.cache
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.sourcelink.json
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.dll
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\refint\CircuitBreaker.ServiceDefaults.dll
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\CircuitBreaker.ServiceDefaults.pdb
-C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.ServiceDefaults\obj\Debug\net9.0\ref\CircuitBreaker.ServiceDefaults.dll

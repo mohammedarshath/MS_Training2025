@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "PollyUsersDemo": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:50520;http://localhost:50521"
+    }
+  }
+}

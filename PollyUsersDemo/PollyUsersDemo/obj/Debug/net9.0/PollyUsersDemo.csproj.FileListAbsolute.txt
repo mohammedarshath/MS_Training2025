@@ -1,0 +1,8 @@
+E:\boeingsep2025ws\PollyUsersDemo\PollyUsersDemo\obj\Debug\net9.0\PollyUsersDemo.csproj.AssemblyReference.cache
+E:\boeingsep2025ws\PollyUsersDemo\PollyUsersDemo\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\boeingsep2025ws\PollyUsersDemo\PollyUsersDemo\obj\Debug\net9.0\PollyUsersDemo.GeneratedMSBuildEditorConfig.editorconfig
+E:\boeingsep2025ws\PollyUsersDemo\PollyUsersDemo\obj\Debug\net9.0\PollyUsersDemo.AssemblyInfoInputs.cache
+E:\boeingsep2025ws\PollyUsersDemo\PollyUsersDemo\obj\Debug\net9.0\PollyUsersDemo.AssemblyInfo.cs
+E:\boeingsep2025ws\PollyUsersDemo\PollyUsersDemo\obj\Debug\net9.0\PollyUsersDemo.csproj.CoreCompileInputs.cache
+E:\boeingsep2025ws\PollyUsersDemo\PollyUsersDemo\obj\Debug\net9.0\PollyUsersDemo.MvcApplicationPartsAssemblyInfo.cache
+E:\boeingsep2025ws\PollyUsersDemo\PollyUsersDemo\obj\Debug\net9.0\PollyUsersDemo.sourcelink.json

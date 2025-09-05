@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CircuitBreaker.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c43263975e55dd99d55a42f84973e0e253cd404")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71f4801fbb00e0b13e2d3f51378867e3ae6f3828")]
 [assembly: System.Reflection.AssemblyProductAttribute("CircuitBreaker.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CircuitBreaker.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

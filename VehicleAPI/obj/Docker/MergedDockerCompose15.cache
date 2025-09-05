@@ -1,0 +1,88 @@
+name: dockercompose16994005551445673945
+services:
+  sqlservervehicleservice:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Vignesh@95!
+    expose:
+      - "1433"
+    hostname: sqlserverpolicyservice
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1403"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: E:\boeingsep2025ws\VehicleAPI\vehicleapi
+        target: /var/opt/mssql/data
+        bind:
+          create_host_path: true
+  vehicleapi:
+    build:
+      context: E:\boeingsep2025ws\VehicleAPI
+      dockerfile: VehicleAPI/Dockerfile
+    container_name: vehicle-api
+    depends_on:
+      sqlservervehicleservice:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_URLS: http://0.0.0.0:80
+      EUREKA__CLIENT__SERVICEURL: http://eureka:8761/eureka/
+      EUREKA__CLIENT__SHOULDFETCHREGISTRY: "true"
+      EUREKA__CLIENT__SHOULDREGISTERWITHEUREKA: "true"
+      EUREKA__INSTANCE__APPNAME: vehicle-api
+      EUREKA__INSTANCE__HOSTNAME: host.docker.internal
+      EUREKA__INSTANCE__INSTANCEID: :vehicle-api:1502
+      EUREKA__INSTANCE__NONSECUREPORT: "5001"
+      EUREKA__INSTANCE__PREFERIPADDRESS: "true"
+    image: vehicleapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "1502"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\param\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\param\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\param\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\param\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: boeingnetwork
+    external: true

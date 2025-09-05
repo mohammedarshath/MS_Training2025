@@ -160,21 +160,9 @@
               "target": "Package",
               "version": "[9.8.0, )"
             },
-            "Microsoft.Extensions.Resilience": {
-              "target": "Package",
-              "version": "[9.8.0, )"
-            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.22.1, )"
-            },
-            "Steeltoe.Discovery.Eureka": {
-              "target": "Package",
-              "version": "[3.2.8, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[9.0.4, )"
             }
           },
           "imports": [

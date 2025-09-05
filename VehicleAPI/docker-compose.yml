@@ -1,0 +1,47 @@
+services:
+  vehicleapi:
+    image: ${DOCKER_REGISTRY-}vehicleapi
+    build:
+      context: .
+      dockerfile: VehicleAPI/Dockerfile
+    ports:
+     -   1502:80
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://0.0.0.0:80 
+      # Eureka client
+      EUREKA__CLIENT__SERVICEURL: http://host.docker.internal:8761/eureka/
+      EUREKA__CLIENT__SHOULDFETCHREGISTRY: "true"
+      EUREKA__CLIENT__SHOULDREGISTERWITHEUREKA: "true"
+
+      # Override what gets registered
+      EUREKA__INSTANCE__APPNAME: BOEING-COMMON
+      EUREKA__INSTANCE__HOSTNAME: boeing-common       # force Eureka to use "localhost"
+      EUREKA__INSTANCE__NONSECUREPORT: "80"      # advertise the HOST port
+      EUREKA__INSTANCE__PREFERIPADDRESS: "false"
+      # make it unique if you scale
+      EUREKA__INSTANCE__INSTANCEID: "boeing-common-localhost:80"
+
+      # optional but recommended so Eureka health links work from host:
+      EUREKA__INSTANCE__STATUSPAGEURL: "http://localhost:1502/health"
+      EUREKA__INSTANCE__HEALTHCHECKURL: "http://localhost:1502/health"
+    networks:
+      boeingnetwork:
+        aliases: [boeing-common] 
+    depends_on:
+      - sqlservervehicleservice
+  sqlservervehicleservice:  
+    image: mcr.microsoft.com/mssql/server 
+    hostname: 'sqlservervehicleservice'  
+    environment:  
+      ACCEPT_EULA: 'Y' 
+      SA_PASSWORD: "Vignesh@95!"  
+    volumes:  
+      - ./vehicleapi:/var/opt/mssql/data  
+    ports:  
+      - '1403:1433'  
+    expose:  
+      - 1433  
+networks:
+  boeingnetwork:
+    external: true  
