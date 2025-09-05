@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\TradingApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CA63D2E1-A8BA-CDF4-4FF4-3489EE72D1C4}|TradingApp\\TradingApp.csproj|c:\\users\\admin\\documents\\dotnetapp\\niitmssep2025\\tradingapp\\tradingapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA63D2E1-A8BA-CDF4-4FF4-3489EE72D1C4}|TradingApp\\TradingApp.csproj|solutionrelative:tradingapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\admin\\documents\\dotnetapp\\niitmssep2025\\tradingapp\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA63D2E1-A8BA-CDF4-4FF4-3489EE72D1C4}|TradingApp\\TradingApp.csproj|c:\\users\\admin\\documents\\dotnetapp\\niitmssep2025\\tradingapp\\tradingapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CA63D2E1-A8BA-CDF4-4FF4-3489EE72D1C4}|TradingApp\\TradingApp.csproj|solutionrelative:tradingapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\TradingApp\\TradingApp\\Program.cs",
+              "RelativeDocumentMoniker": "TradingApp\\Program.cs",
+              "ToolTip": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\TradingApp\\TradingApp\\Program.cs",
+              "RelativeToolTip": "TradingApp\\Program.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T06:15:23.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\TradingApp\\TradingApp\\appsettings.json",
+              "RelativeDocumentMoniker": "TradingApp\\appsettings.json",
+              "ToolTip": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\TradingApp\\TradingApp\\appsettings.json",
+              "RelativeToolTip": "TradingApp\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-05T06:14:11.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\TradingApp\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\TradingApp\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-09-05T06:12:47.206Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

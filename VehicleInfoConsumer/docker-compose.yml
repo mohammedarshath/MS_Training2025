@@ -1,0 +1,16 @@
+services:
+  vehicleinfoconsumer:
+    image: ${DOCKER_REGISTRY-}vehicleinfoconsumer
+    build:
+      context: .
+      dockerfile: VehicleInfoConsumer/Dockerfile
+    networks: [boeingnetwork]
+    ports:
+      - "5000:5000"
+    environment:
+      ASPNETCORE_URLS: http://0.0.0.0:5000
+      KAFKA__BOOTSTRAP_SERVERS: kafka:9092   # internal listener
+    
+networks:
+  boeingnetwork:
+    external: true

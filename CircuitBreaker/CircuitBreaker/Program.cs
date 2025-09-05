@@ -1,77 +1,153 @@
-using CircuitBreaker.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Http.Resilience;
-
+using Microsoft.OpenApi.Models;
 using Polly;
 using Polly.Fallback;
+using Polly.RateLimiting;
+using Polly.Retry;
 using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading;
 using System.Threading.RateLimiting;
-
+using Steeltoe.Discovery.Client;
+ResiliencePropertyKey<ILogger> LoggerKey = new("logger");
 var builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
+builder.Logging.AddFilter("Polly", LogLevel.Error);
+builder.Logging.AddFilter("Microsoft.Extensions.Http.Resilience", LogLevel.Error);
+builder.Logging.AddFilter("Microsoft.Extensions.Http.Resilience.ResilienceHandler", LogLevel.Error);
+builder.Logging.AddFilter("System.Net.Http.HttpClient", LogLevel.Warning);
+builder.Logging.AddFilter("System.Net.Http.HttpClient.jsonApi", LogLevel.Warning);
 
 builder.AddServiceDefaults();
+//HttpClient with Circuit Breaker
+// Register HttpClient with resilience pipeline
+builder.Services.AddHttpClient("jsonApi", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:1502/api/v1/Vehicles");
+})
+.AddResilienceHandler("resilience", pipeline =>
+{
+    // Fallback: return safe default when all else fails
+    pipeline.AddFallback(new FallbackStrategyOptions<HttpResponseMessage>
+    {
+        ShouldHandle = static args =>
+        {
+            if (args.Outcome.Exception is not null) return PredicateResult.True();
+            if (args.Outcome.Result is HttpResponseMessage r)
+            {
+                var code = (int)r.StatusCode;
+                return code >= 500 || r.StatusCode == HttpStatusCode.RequestTimeout || code == 429
+                    ? PredicateResult.True()
+                    : PredicateResult.False();
+            }
+            return PredicateResult.False();
+        },
 
-// Add services to the container.
+        FallbackAction = static _ =>
+        {
+            // No exception details; include a correlation id instead
+            var errId = Guid.NewGuid().ToString("N");
+
+            var resp = new HttpResponseMessage(HttpStatusCode.ServiceUnavailable);
+            resp.Headers.TryAddWithoutValidation("X-From-Fallback", "true");
+            resp.Headers.TryAddWithoutValidation("X-Error-Id", errId);
+
+            resp.Content = new StringContent(
+                $$"""{"fallback":true,"message":"Upstream temporarily unavailable. Please try again.","errorId":"{{errId}}"}""",
+                Encoding.UTF8,
+                "application/json");
+
+            return Outcome.FromResultAsValueTask(resp);
+        }
+    });
+
+
+
+
+    // Rate limiter: allow 5 requests per second
+    // Inside your pipeline setup
+    pipeline.AddRateLimiter(new HttpRateLimiterStrategyOptions
+    {
+        // Built-in simple limiter (outbound concurrency)
+        DefaultRateLimiterOptions = new ConcurrencyLimiterOptions
+        {
+            PermitLimit = 5,
+            QueueLimit = 2,
+            QueueProcessingOrder = QueueProcessingOrder.OldestFirst
+        }
+    });
+    // Retry: 3 attempts, exponential backoff
+    pipeline.AddRetry(new HttpRetryStrategyOptions
+    {
+        MaxRetryAttempts = 3,
+        Delay = TimeSpan.FromMilliseconds(200),
+        BackoffType = DelayBackoffType.Exponential,
+        UseJitter = true,
+        // (Optional – defaults already handle transients)
+        ShouldHandle = static args =>
+            HttpClientResiliencePredicates.IsTransient(args.Outcome)
+                ? PredicateResult.True()
+                : PredicateResult.False(),
+
+        // This proves retries happen
+        OnRetry = static args =>
+        {
+            var reason = args.Outcome.Exception?.GetType().Name
+                         ?? (args.Outcome.Result is HttpResponseMessage r
+                             ? $"{(int)r.StatusCode} {r.ReasonPhrase}"
+                             : "unknown");
+
+            Console.WriteLine($"[Retry] attempt {args.AttemptNumber} after {args.Duration} because {reason}");
+            return default; // ValueTask.CompletedTask
+        }
+    });
+
+    // Circuit breaker: open after 5 errors, reset after 30s
+    pipeline.AddCircuitBreaker(new HttpCircuitBreakerStrategyOptions
+    {
+        FailureRatio = 0.5,              // 50% failure rate
+        MinimumThroughput = 5,           // at least 5 calls
+        SamplingDuration = TimeSpan.FromSeconds(10),
+        BreakDuration = TimeSpan.FromSeconds(30),
+        ShouldHandle = static args =>
+                HttpClientResiliencePredicates.IsTransient(args.Outcome)
+                    ? PredicateResult.True()
+                    : PredicateResult.False()
+    });
+});
+
+//eureka connection
+
+builder.Services.AddDiscoveryClient(configuration);
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-// Typed HttpClient with resilience pipeline (Circuit Breaker + Timeout)
-builder.Services
-    .AddHttpClient<ClientAccess>(client =>
-    {
-        client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
-        client.DefaultRequestHeaders.UserAgent.ParseAdd("PollyCircuitBreakerDemo/1.0");
-    })
-    .AddResilienceHandler("jsonph-pipeline", pipeline =>
-    {
 
-        // Define fallback policy
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(o =>
+{
+    o.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Users API",
+        Version = "v1",
         
-
-
-        // 1) RETRY — exponential backoff + jitter on transient failures (5xx/408 + common I/O)
-        pipeline.AddRetry(new HttpRetryStrategyOptions
-        {
-            MaxRetryAttempts = 3,                       // total tries = 1 + 3
-            BackoffType = DelayBackoffType.Exponential, // 200ms, 400ms, 800ms (approx; jittered)
-            Delay = TimeSpan.FromMilliseconds(200),
-            UseJitter = true,
-            ShouldHandle = _ => new ValueTask<bool>(true)
-        });
-
-        // CIRCUIT BREAKER:
-        // Opens when >=50% of requests fail within a 30s window,
-        // only after at least 20 requests have been seen. Stays open 30s.
-        pipeline.AddCircuitBreaker(new HttpCircuitBreakerStrategyOptions
-        {
-            FailureRatio = 0.5,
-            SamplingDuration = TimeSpan.FromSeconds(30),
-            MinimumThroughput = 20,
-            BreakDuration = TimeSpan.FromSeconds(30),
-            // Handles 5xx/408 and common I/O errors by default
-           ShouldHandle = _ => new ValueTask<bool>(true)
-
-        });
-
-        // SHORT TIMEOUT per request (bounds latency while breaker is closed/half-open)
-        pipeline.AddTimeout(TimeSpan.FromSeconds(2));
-
-        //// 4) OUTGOING RATE LIMITER — token bucket (~10 RPS with burst 10; queue up to 5)
-        //pipeline.AddRateLimiter(new RateLimiterStrategyOptions<HttpResponseMessage>
-        //{
-        //    RateLimiter = PartitionedRateLimiter.Create<HttpRequestMessage, string>(_ =>
-        //        RateLimitPartition.GetTokenBucketLimiter("jsonph-global", _ => new TokenBucketRateLimiterOptions
-        //        {
-        //            TokenLimit = 10,                 // burst size
-        //            TokensPerPeriod = 10,            // refill tokens each period
-        //            ReplenishmentPeriod = TimeSpan.FromSeconds(1),
-        //            QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
-        //            QueueLimit = 5,                  // waiting requests allowed
-        //            AutoReplenishment = true
-        //        }))
-        //});
     });
 
+    // Include XML comments if enabled in csproj
+    var xml = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xml);
+    if (File.Exists(xmlPath))
+        o.IncludeXmlComments(xmlPath);
+
+    // (optional) enable [SwaggerOperation]/[SwaggerResponse] attributes
+    // o.EnableAnnotations();
+});
 
 
 var app = builder.Build();
@@ -79,10 +155,13 @@ var app = builder.Build();
 app.MapDefaultEndpoints();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
+
+// (Optional) redirect root to Swagger UI
+app.MapGet("/", () => Results.Redirect("/swagger"));
+
+app.MapControllers();
 
 app.UseHttpsRedirection();
 
@@ -91,19 +170,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 
-// Minimal API endpoints
-app.MapGet("/", () => Results.Redirect("/api/users"));
 
-app.MapGet("/api/users", async (ClientAccess client, CancellationToken ct) =>
-{
-    var users = await client.GetUsersAsync(ct);
-    return Results.Ok(users);
-});
-
-app.MapGet("/api/users/{id:int}", async (int id, ClientAccess client, CancellationToken ct) =>
-{
-    var user = await client.GetUserAsync(id, ct);
-    return user is null ? Results.NotFound() : Results.Ok(user);
-});
 
 app.Run();

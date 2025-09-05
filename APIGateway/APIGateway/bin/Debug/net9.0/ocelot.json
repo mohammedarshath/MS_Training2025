@@ -1,8 +1,20 @@
 ﻿{
     "Routes": [
         {
+            "ServiceName": "CB-COMMON",
+            "DownstreamPathTemplate": "/api/users",
+            "UpstreamPathTemplate": "/users",
+            "UpstreamHttpMethod": [ "GET" ],
+            "FileCacheOptions": {
+                "TtlSeconds": 15
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
+        },
+        {
             "ServiceName": "BOEING-COMMON",
-            "DownstreamPathTemplate": "/api/v1/vehicles",
+            "DownstreamPathTemplate": "/api/v1/Vehicles",
             "UpstreamPathTemplate": "/vehicles",
             "UpstreamHttpMethod": [ "GET" ],
             "FileCacheOptions": {

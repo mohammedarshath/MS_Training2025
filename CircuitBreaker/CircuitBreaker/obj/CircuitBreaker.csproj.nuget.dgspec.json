@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\CircuitBreaker.csproj": {}
+    "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker\\CircuitBreaker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj": {
+    "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj",
+        "projectUniqueName": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj",
         "projectName": "CircuitBreaker.ServiceDefaults",
-        "projectPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\obj\\",
+        "projectPath": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj",
+        "packagesPath": "C:\\Users\\param\\.nuget\\packages\\",
+        "outputPath": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\param\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -102,20 +102,20 @@
         }
       }
     },
-    "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\CircuitBreaker.csproj": {
+    "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker\\CircuitBreaker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\CircuitBreaker.csproj",
+        "projectUniqueName": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker\\CircuitBreaker.csproj",
         "projectName": "CircuitBreaker",
-        "projectPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\CircuitBreaker.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\obj\\",
+        "projectPath": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker\\CircuitBreaker.csproj",
+        "packagesPath": "C:\\Users\\param\\.nuget\\packages\\",
+        "outputPath": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\param\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -130,8 +130,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj": {
-                "projectPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj"
+              "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj": {
+                "projectPath": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.ServiceDefaults\\CircuitBreaker.ServiceDefaults.csproj"
               }
             }
           }
@@ -160,9 +160,21 @@
               "target": "Package",
               "version": "[9.8.0, )"
             },
+            "Microsoft.Extensions.Resilience": {
+              "target": "Package",
+              "version": "[9.8.0, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.22.1, )"
+            },
+            "Steeltoe.Discovery.Eureka": {
+              "target": "Package",
+              "version": "[3.2.8, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [

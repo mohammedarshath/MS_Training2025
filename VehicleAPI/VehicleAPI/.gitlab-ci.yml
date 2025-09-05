@@ -1,0 +1,17 @@
+﻿stages: [build, test]
+image: mcr.microsoft.com/dotnet/sdk:9.0
+
+build:
+  stage: build
+  script:
+    - dotnet restore
+    - dotnet build -c Release --no-restore
+
+test:
+  stage: test
+  script:
+    - dotnet test -c Release --no-build --logger "trx;LogFileName=test-results.trx"
+  artifacts:
+    when: always
+    paths:
+      - "/TestResults/"

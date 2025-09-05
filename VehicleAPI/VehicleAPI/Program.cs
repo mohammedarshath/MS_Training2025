@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -6,6 +7,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Prometheus;
 using Steeltoe.Discovery.Client;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 using System.Security.Claims;
@@ -13,6 +15,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using VaultSharp;
 using VaultSharp.V1.AuthMethods.Token;
+using VaultSharp.V1.SystemBackend;
+using VehicleAPI.Auth;
 using VehicleAPI.Contexts;
 using VehicleAPI.DTO;
 using VehicleAPI.Graphql;
@@ -120,27 +124,53 @@ builder.Services.AddAutoMapper(cfg =>
 var authority = builder.Configuration["Jwt:Authority"]!;
 var validateAudience = bool.TryParse(builder.Configuration["Jwt:ValidateAudience"], out var va) && va;
 var audience = builder.Configuration["Jwt:Audience"];
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-.AddJwtBearer(o =>
+if (builder.Environment.IsEnvironment("Test"))
 {
-    // where the API can fetch OIDC metadata & JWKS from:
-    o.Authority = "http://host.docker.internal:8080/realms/master"; // Windows/Mac
-    // (Linux: use your host IP, e.g. http://172.17.0.1:8080/realms/master)
-    o.RequireHttpsMetadata = false;
+    builder.Services.AddAuthentication(TestAuthHandler.Scheme)
+        .AddScheme<AuthenticationSchemeOptions, TestAuthHandler>(TestAuthHandler.Scheme, _ => { });
 
-    // EXACT string that’s inside your JWT `iss`:
-    o.TokenValidationParameters = new()
+    builder.Services.AddAuthorization(options =>
     {
-        ValidateIssuer = true,
-        ValidIssuer = "http://localhost:8080/realms/master",
-        ValidateAudience = false
-    };
-});
+        // Example policy based on scopes
+        options.AddPolicy("Vehicles.Read", p =>
+            p.RequireAssertion(ctx =>
+            {
+                // check `scope` claims like: "vehicles.read profile"
+                var hasScope = ctx.User.Claims
+                    .Where(c => c.Type == "scope")
+                    .SelectMany(c => c.Value.Split(' ', StringSplitOptions.RemoveEmptyEntries))
+                    .Any(s => string.Equals(s, "vehicles.read", StringComparison.OrdinalIgnoreCase));
 
-builder.Services.AddAuthorization();
+                // allow admin via role
+                var isAdmin = ctx.User.IsInRole("admin")
+                              || ctx.User.Claims.Any(c => c.Type == ClaimTypes.Role && c.Value == "admin");
 
+                return hasScope || isAdmin;
+            }));
+    });
+}
+else
+{
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(o =>
+    {
+        // where the API can fetch OIDC metadata & JWKS from:
+        o.Authority = "http://host.docker.internal:8080/realms/master"; // Windows/Mac
+                                                                        // (Linux: use your host IP, e.g. http://172.17.0.1:8080/realms/master)
+        o.RequireHttpsMetadata = false;
 
+        // EXACT string that’s inside your JWT `iss`:
+        o.TokenValidationParameters = new()
+        {
+            ValidateIssuer = true,
+            ValidIssuer = "http://localhost:8080/realms/master",
+            ValidateAudience = false
+        };
+    });
+
+    builder.Services.AddAuthorization();
+
+}
 
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -262,6 +292,7 @@ app.UseHttpsRedirection();
 app.UseCors(policyName);
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMetricServer();
 app.MapGet("/vehicles", async () => "ok").RequireAuthorization();
 // Public
 app.MapGet("/public", () => new { ok = true });
@@ -284,3 +315,6 @@ app.MapGraphQL("/graphql");
 // Public
 
 app.Run();
+
+
+public partial class Program { }

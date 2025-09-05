@@ -8,5 +8,5 @@ namespace Projects;
 public class CircuitBreaker_AppHost
 {
     private CircuitBreaker_AppHost() { }
-    public static string ProjectPath => """C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker.AppHost""";
+    public static string ProjectPath => """E:\boeingsep2025ws\CircuitBreaker\CircuitBreaker.AppHost""";
 }

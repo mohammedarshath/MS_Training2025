@@ -7,5 +7,5 @@ namespace Projects;
 [global::System.Diagnostics.DebuggerDisplay("Type = {GetType().Name,nq}, ProjectPath = {ProjectPath}")]
 public class CircuitBreaker : global::Aspire.Hosting.IProjectMetadata
 {
-    public string ProjectPath => """C:\Users\admin\Documents\dotNetApp\niitmssep2025\CircuitBreaker\CircuitBreaker\CircuitBreaker.csproj""";
+    public string ProjectPath => """E:\boeingsep2025ws\CircuitBreaker\CircuitBreaker\CircuitBreaker.csproj""";
 }

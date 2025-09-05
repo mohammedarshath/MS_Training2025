@@ -3630,23 +3630,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\param\\.nuget\\packages\\": {},
+    "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.AppHost\\CircuitBreaker.AppHost.csproj",
+      "projectUniqueName": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.AppHost\\CircuitBreaker.AppHost.csproj",
       "projectName": "CircuitBreaker.AppHost",
-      "projectPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.AppHost\\CircuitBreaker.AppHost.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.AppHost\\obj\\",
+      "projectPath": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.AppHost\\CircuitBreaker.AppHost.csproj",
+      "packagesPath": "C:\\Users\\param\\.nuget\\packages\\",
+      "outputPath": "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.AppHost\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "d:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\param\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

@@ -12,23 +12,21 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("71d6ae6c-6ec0-452e-be2a-9eba2f6ee116")]
-[assembly: System.Reflection.AssemblyMetadata("dcpclipath", "C:\\Users\\admin\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.2.1\\tools\\d" +
+[assembly: System.Reflection.AssemblyMetadata("dcpclipath", "C:\\Users\\param\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.2.1\\tools\\d" +
     "cp.exe")]
-[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", "C:\\Users\\admin\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.2.1\\tools\\e" +
+[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", "C:\\Users\\param\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.2.1\\tools\\e" +
     "xt\\")]
-[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\admin\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.2.1\\tools\\e" +
+[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\param\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.2.1\\tools\\e" +
     "xt\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.Ap" +
-    "pHost")]
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.AppHost")]
 [assembly: System.Reflection.AssemblyMetadata("apphostprojectname", "CircuitBreaker.AppHost.csproj")]
-[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\admin\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.2.1\\tools\\Aspire.Da" +
+[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\param\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.2.1\\tools\\Aspire.Da" +
     "shboard.exe")]
-[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker.Ap" +
-    "pHost\\obj\\")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "E:\\boeingsep2025ws\\CircuitBreaker\\CircuitBreaker.AppHost\\obj\\")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CircuitBreaker.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71f4801fbb00e0b13e2d3f51378867e3ae6f3828")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3582cdb2111a15b5884f84c62177b91d969d2a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("CircuitBreaker.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CircuitBreaker.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

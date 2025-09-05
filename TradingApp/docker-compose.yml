@@ -1,0 +1,29 @@
+services:
+  tradingapp:
+    image: ${DOCKER_REGISTRY-}tradingapp
+    build:
+      context: .
+      dockerfile: TradingApp/Dockerfile
+    ports:
+     -   1506:80
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80 
+
+    depends_on:
+      - sqlservertraderservice
+  sqlservertraderservice:  
+    image: mcr.microsoft.com/mssql/server 
+    hostname: 'sqlservertraderservice'  
+    environment:  
+      ACCEPT_EULA: 'Y' 
+      SA_PASSWORD: "Vignesh@95!"  
+    volumes:  
+      - ./traderapi:/var/opt/mssql/data  
+    ports:  
+      - '1403:1433'  
+    expose:  
+      - 1433  
+networks:
+  boeingnetwork:
+    external: true  
