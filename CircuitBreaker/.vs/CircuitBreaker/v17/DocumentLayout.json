@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\admin\\documents\\dotnetapp\\niitmssep2025\\circuitbreaker\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3008AEBF-361A-71EC-F42C-AB32EF5B54C3}|CircuitBreaker\\CircuitBreaker.csproj|c:\\users\\admin\\documents\\dotnetapp\\niitmssep2025\\circuitbreaker\\circuitbreaker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3008AEBF-361A-71EC-F42C-AB32EF5B54C3}|CircuitBreaker\\CircuitBreaker.csproj|solutionrelative:circuitbreaker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3008AEBF-361A-71EC-F42C-AB32EF5B54C3}|CircuitBreaker\\CircuitBreaker.csproj|c:\\users\\admin\\documents\\dotnetapp\\niitmssep2025\\circuitbreaker\\circuitbreaker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3008AEBF-361A-71EC-F42C-AB32EF5B54C3}|CircuitBreaker\\CircuitBreaker.csproj|solutionrelative:circuitbreaker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3008AEBF-361A-71EC-F42C-AB32EF5B54C3}|CircuitBreaker\\CircuitBreaker.csproj|c:\\users\\admin\\documents\\dotnetapp\\niitmssep2025\\circuitbreaker\\circuitbreaker\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3008AEBF-361A-71EC-F42C-AB32EF5B54C3}|CircuitBreaker\\CircuitBreaker.csproj|solutionrelative:circuitbreaker\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-09-05T05:29:47.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\Program.cs",
+              "RelativeDocumentMoniker": "CircuitBreaker\\Program.cs",
+              "ToolTip": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\Program.cs",
+              "RelativeToolTip": "CircuitBreaker\\Program.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAK4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T04:36:16.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\appsettings.json",
+              "RelativeDocumentMoniker": "CircuitBreaker\\appsettings.json",
+              "ToolTip": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\appsettings.json",
+              "RelativeToolTip": "CircuitBreaker\\appsettings.json",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswBAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-05T04:27:48.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "CircuitBreaker\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\admin\\Documents\\dotNetApp\\niitmssep2025\\CircuitBreaker\\CircuitBreaker\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "CircuitBreaker\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T04:25:13.801Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
