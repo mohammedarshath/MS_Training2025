@@ -1,0 +1,39 @@
+﻿{
+    "Routes": [
+        {
+            "ServiceName": "BOEING-COMMON",
+            "DownstreamPathTemplate": "/api/v1/vehicles",
+            "UpstreamPathTemplate": "/vehicles",
+            "UpstreamHttpMethod": [ "GET" ],
+            "FileCacheOptions": {
+                "TtlSeconds": 15
+            },
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
+        }
+        //{
+        //    "ServiceName": "VSECURE-COMMON",
+        //    "DownstreamPathTemplate": "/api/v1/Categories",
+        //    "UpstreamPathTemplate": "/categories",
+        //    "UpstreamHttpMethod": [ "GET" ],
+        //    "FileCacheOptions": {
+        //        "TtlSeconds": 15
+        //    },
+        //    "LoadBalancerOptions": {
+        //        "Type": "RoundRobin"
+        //    }
+        //}
+    ],
+    "GlobalConfiguration": {
+        "RequestIdKey": "OcRequestId",
+        "DownstreamScheme": "http",
+        "ReRoutesCaseSensitive": false,
+        "UseServiceDiscovery": true,
+        "ServiceDiscoveryProvider": {
+            "Host": "localhost",
+            "Port": 8761,
+            "Type": "Eureka"
+        }
+    }
+}
